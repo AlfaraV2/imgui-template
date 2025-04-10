@@ -1,6 +1,7 @@
 #include "Model3D.hpp"
 #include <cstddef>
 #include <iostream>
+#include "chess2D/Piece.hpp"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float2.hpp"
 #include "glm/fwd.hpp"
@@ -49,6 +50,7 @@ void Model3D::fill_matrices(std::array<std::unique_ptr<Piece>, 64>&board)
     m_model_matrices.clear(); //on clear pour s'assurer de bien toujours avoir un nombre correcte de matrices. (et pas les accumuler)
     for (size_t i{0}; i < board.size(); i++)
     {
+        //si on tombe sur une pièce
         if (board[i])
         {
             glm::vec2 position2D = from_index_to_2D_pos(i);

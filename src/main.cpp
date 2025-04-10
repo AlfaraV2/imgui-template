@@ -56,9 +56,6 @@ int main()
             ImGui::Begin("Lait-Eau's ChessGame");
             chessboard.display_board();
             ImGui::End();
-
-
-
                 //renderer3D
                 glClearColor(0.847f, 0.82f, 0.929f, 1.f);
                 glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
