@@ -5,14 +5,16 @@
 #include <optional>
 #include "Piece.hpp"
 
+//Structure pour le mouvement d'une pièce
 struct Move {
     PieceType piece_type_to_move;
-    int from;
-    int to;
+    int       from;
+    int       to;
 };
 
 class ChessBoard {
 private:
+    //Board
     std::array<std::unique_ptr<Piece>, 64> m_board;
     //
     int         m_selectedPieceIndex;
@@ -24,7 +26,7 @@ private:
     bool        m_showPromotionPopup = false;
     int         m_pawnToPromoteIndex = -1;
     Color       m_promotionColor;
-    //Move for renderer 3D
+    // Move for renderer 3D
     std::optional<Move> m_move = std::nullopt;
 
 public:
@@ -32,6 +34,5 @@ public:
     void                                    display_board();
     void                                    setFont(ImFont* font) { m_chessFont = font; }
     std::array<std::unique_ptr<Piece>, 64>& get_board() { return m_board; };
-    std::optional<Move>                    &get_move() { return m_move; };
-    
+    std::optional<Move>&                    get_move() { return m_move; };
 };
