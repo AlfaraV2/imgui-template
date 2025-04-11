@@ -180,6 +180,7 @@ void ChessBoard::display_board()
                         {
                             m_pawnToPromoteIndex          = index;
                             m_promotionColor              = m_board[m_selectedPieceIndex]->get_color();
+                            m_move = {.piece_type_to_move = m_board[m_selectedPieceIndex]->get_type(), .from = m_selectedPieceIndex, .to = index};
                             m_board[index]                = std::move(m_board[m_selectedPieceIndex]);
                             m_board[m_selectedPieceIndex] = nullptr;
                             m_showPromotionPopup          = true;
