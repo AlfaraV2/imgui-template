@@ -17,7 +17,6 @@
 //     // Exemple : savoir si un pion est promu automatiquement ou non (mode aléatoire), c'est à dire que lors de la promotion, le pion est soit promu en dame soit le joueur possède le choix de choisir la pièce qu'il souhaite
 //     double p_bernoulli = 0.5;
 //     bool autoPromote = uniform_0_1() < p_bernoulli;
-//     std::cout << "Bernoulli -> Promotion auto (1=oui, 0=non): " << autoPromote << std::endl;
 //     // E[X] = p ; Var[X] = p(1 - p)
 
 //     // 2. Poisson(lambda)
@@ -31,7 +30,6 @@
 //         p *= uniform_0_1();
 //     }
 //     int botErrors = k - 1;
-//     std::cout << "Poisson -> Nombre d'erreurs dans la partie : " << botErrors << std::endl;
 //     // E[X] = λ ; Var[X] = λ
 
 //     // 3. Loi Normale
@@ -41,21 +39,18 @@
 //     double u2 = uniform_0_1();
 //     double z = std::sqrt(-2.0 * std::log(u1)) * std::cos(2 * M_PI * u2);
 //     double normalSample = mu + sigma * z;
-//     std::cout << "Normale -> Temps de réflexion : " << normalSample << " sec" << std::endl;
 //     // E[X] = μ (moyenne) ; Var[X] = σ² (dispersion)
 
 //     // 4. Exponentielle(lambda)
 //     // Exemple : délais entre coups (mode blitz), permets de simuler des délais aléatoires mais rapides entre les coups, particulièrement utile en mode blitz
 //     double lambda_exp = 0.5;
 //     double expSample = -std::log(uniform_0_1()) / lambda_exp;
-//     std::cout << "Exponentielle -> Délai entre coups : " << expSample << " sec" << std::endl;
 //     // E[X] = 1/λ ; Var[X] = 1/λ²
 
 //     // 5. Uniforme continue [a, b]
 //     // Exemple : placement aléatoire d'une pièce, permets de remplir le plateau avec des pièces selon une proba
 //     double a = 0.0, b = 1.0;
 //     double uniformSample = a + (b - a) * uniform_0_1();
-//     std::cout << "Uniforme -> Placement aléatoire : " << uniformSample << std::endl;
 //     // E[X] = (a + b)/2 ; Var[X] = (b - a)² / 12
 
 //     // 6. Géométrique(p)
@@ -66,6 +61,5 @@
 //     while (uniform_0_1() > p_geom) {
 //         geom_k++;
 //     }
-//     std::cout << "Géométrique -> Essais avant bon coup : " << geom_k << std::endl;
 //     // E[X] = 1/p ; Var[X] = (1 - p) / p²
 // }
